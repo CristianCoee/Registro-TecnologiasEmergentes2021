@@ -1,8 +1,11 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\HomeController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\periodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +24,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('productos', 'ProductosController@indexprod')->name('productos');
-//Route::get('/', [HomeController::class,'indexalumno']);
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'alumnos.index'])->name('alumnos');
+//Route::get('/alumnos', 'HomeController@indexalumno')->name('alumnos');
+//Route::get('/alumnos', 'AlumnoController@index')->name('alumnos');
+//Route::get('/alumnos', [App\Http\Controllers\AlumnosController::class, 'index'])->name('alumnos');
+//Route::get('/', [HomeController::class,'indexalumnos']);
+//Route::get('/home', [App\Http\Controllers\HomeController::indexalumno(), 'Alumnos.index'])->name('Alumnos');
 //Route::resource('alumnos', 'AlumnoController');
-Route::get('/home', 'HomeController@indexalumno');
+//Route::get('/periodo', [App\Http\Controllers\periodoController::class, 'index'])->name('periodo');
+Route::get('/alumnos', 'AlumnoController@index');
+Route::resource('alumnos', 'AlumnoController');
+Route::get('/periodo', 'periodoController@index');
+Route::resource('periodo', 'periodoController');
+

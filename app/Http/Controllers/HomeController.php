@@ -33,7 +33,17 @@ class HomeController extends Controller
      */
     public function indexalumno()
     {
-        return view('alumnos.index');
+        return view('Alumnos.index');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function indexperiodo()
+    {
+        return view('periodo.index');
     }
 
 }

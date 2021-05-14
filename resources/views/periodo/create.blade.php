@@ -10,11 +10,11 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Alumnos') }}</div>
+                <div class="card-header">{{ __('periodo') }}</div>
                 <div class="card-body">
-                    <form method = "post" action = "{{ route('alumnos.store')}}">
+                    <form method = "post" action = "{{ route('periodo.store')}}">
                         @csrf
-                        @include('alumnos.formprods')
+                        @include('periodo.formprods')
                     </form>
                 </div>
             </div>

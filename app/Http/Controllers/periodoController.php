@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Alumnos;
+use App\Models\periodo;
 
-class AlumnoController extends Controller
+class periodoController extends Controller
 
     {
         /**
@@ -16,10 +16,10 @@ class AlumnoController extends Controller
         public function index()
         {
             //
-            $data['alumnos']=Alumnos::paginate(15);
-            return view('Alumnos.index', $data);
-            /*$alumnos = Alumnos::all();
-            return view('alumnos.index', $alumnos);*/
+            $data['periodo']=Periodo::paginate(15);
+            return view('periodo.index', $data);
+            /*$periodo = Periodo::all();
+            return view('periodo.index', $periodo);*/
     
         }
     
@@ -31,7 +31,7 @@ class AlumnoController extends Controller
         public function create()
         {
             //
-            return view('Alumnos.create');
+            return view('periodo.create');
         }
     
         /**
@@ -43,19 +43,19 @@ class AlumnoController extends Controller
         public function store(Request $request)
         {
             //
-            $dataalumnos = $request->except('_token','saveitem');
-            Alumnos::insert($dataalumnos);
-            //return response()->json($dataProducts);
-            return redirect('alumnos/');
+            $dataperiodo = $request->except('_token','saveitem');
+            Periodo::insert($dataperiodo);
+            //return response()->json($dataperiodo);
+            return redirect('periodo/');
         }
     
         /**
          * Display the specified resource.
          *
-         * @param  \App\Alumnos  $alumnos
+         * @param  \App\Perido  $periodo
          * @return \Illuminate\Http\Response
          */
-        public function show(Alumnos $alumnos)
+        public function show(Periodo $perido)
         {
             //
         }
@@ -63,17 +63,17 @@ class AlumnoController extends Controller
         /**
          * Show the form for editing the specified resource.
          *
-         * @param  \App\Alumnos  $alumnos
+         * @param  \App\Periodo  $alumnos
          * @return \Illuminate\Http\Response
          */
-        /*public function edit(Alumnos $alumnos)
+        /*public function edit(Periodo $periodo)
         {
             //
-            return view('alumnos.edit');
+            return view('periodo.edit');
         }*/
         public function edit($id) {
-            $alumnos = Alumnos::findOrFail($id);
-            return view('Alumnos.edit', compact('alumnos'));
+            $periodo = Periodo::findOrFail($id);
+            return view('periodo.edit', compact('periodo'));
          }
     
     
@@ -81,14 +81,14 @@ class AlumnoController extends Controller
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request  $request
-         * @param  \App\Alumnos  $alumnos
+         * @param  \App\Periodo  $periodo
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id){
     
-            $alumnos = Alumnos::findOrFail($id);
-            $alumnos->update($request->all());
-            return redirect('alumnos');
+            $periodo = Periodo::findOrFail($id);
+            $periodo->update($request->all());
+            return redirect('periodo');
         }
         /*public function update(Request $request, Alumnos $alumnos)
         {
@@ -98,13 +98,13 @@ class AlumnoController extends Controller
         /**
          * Remove the specified resource from storage.
          *
-         * @param  \App\Alumnos $alumnos
+         * @param  \App\Periodo $periodo
          * @return \Illuminate\Http\Response
          */
         public function destroy($id)
         {
             //
-            Alumnos::destroy($id);
-            return redirect('alumnos');
+            Periodo::destroy($id);
+            return redirect('periodo');
         }
     }
