@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\HomeController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\periodoController;
+use App\Http\Controllers\profesoresController;
+use App\Http\Controllers\materiasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\periodoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -38,4 +40,7 @@ Route::get('/alumnos', 'AlumnoController@index');
 Route::resource('alumnos', 'AlumnoController');
 Route::get('/periodo', 'periodoController@index');
 Route::resource('periodo', 'periodoController');
-
+Route::get('/profesores', 'profesoresController@index');
+Route::resource('profesores', 'profesoresController');
+Route::get('/materias', 'materiasController@index');
+Route::resource('materias', 'materiasController');

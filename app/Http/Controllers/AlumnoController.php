@@ -8,6 +8,9 @@ use App\Models\Alumnos;
 class AlumnoController extends Controller
 
     {
+        public function __construct(){
+            $this->middleware('auth');
+        }
         /**
          * Display a listing of the resource.
          *
@@ -43,6 +46,22 @@ class AlumnoController extends Controller
         public function store(Request $request)
         {
             //
+
+            $validatedData = $request->validate([
+                'NIE' => 'required|numeric',
+                'nombrealum' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'apellidoalum' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'telefonoalum' => 'required|numeric',
+                'sexo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'fNacimiento' => 'required',
+                'fIngreso' => 'required',
+                'direccion' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'responsable' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'curso' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'estado' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            ]);
+
+
             $dataalumnos = $request->except('_token','saveitem');
             Alumnos::insert($dataalumnos);
             //return response()->json($dataProducts);

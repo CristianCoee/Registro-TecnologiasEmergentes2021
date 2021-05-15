@@ -1,14 +1,18 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Alumnos')
+
+@section('content_header')
+<div class="card-header">{{ __('Alumnos') }}</div>
+@stop
 
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-<div class="container">
+    
+   
     <div class="row justify-content-center">
         <div class="table-responsive-md">
         <div class="card">
-                <div class="card-header">{{ __('Alumnos') }}</div>
+                
                     <div class="row justify-content-start">
                         <div class="col-md-auto"><a class="btn btn-primary" href="{{route('alumnos.create')}}">Agregar Nuevo Alumno</a>
                         </div>
@@ -22,12 +26,13 @@
                             <th scope="col">Apellido</th>
                             <th scope="col">Telefono</th>
                             <th scope="col">Sexo</th>
-                            <th scope="col">F Nacimiento</th>
-                            <th scope="col">F Ingreso</th>
+                            <th scope="col">Fecha Nacimiento</th>
+                            <th scope="col">Fecha Ingreso</th>
                             <th scope="col">Direccion</th>
                             <th scope="col">Responsable</th>
                             <th scope="col">Curso</th>
                             <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
                             
                             </tr>
                         </thead>
@@ -65,5 +70,14 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

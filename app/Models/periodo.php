@@ -11,4 +11,6 @@ class periodo extends Eloquent
    protected $connection = 'mongodb';
     protected $collection = 'periodo';
     protected $fillable = ["periodo", "dias", "estado", "año"];
+
+    
 }

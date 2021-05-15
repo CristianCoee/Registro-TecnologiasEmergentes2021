@@ -8,6 +8,9 @@ use App\Models\periodo;
 class periodoController extends Controller
 
     {
+        public function __construct(){
+            $this->middleware('auth');
+        }
         /**
          * Display a listing of the resource.
          *
@@ -43,6 +46,14 @@ class periodoController extends Controller
         public function store(Request $request)
         {
             //
+
+            $validatedData = $request->validate([
+                'periodo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+                'dias' => 'required|numeric',
+                'año' => 'required|numeric',
+                'estado' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            ]);
+        
             $dataperiodo = $request->except('_token','saveitem');
             Periodo::insert($dataperiodo);
             //return response()->json($dataperiodo);
