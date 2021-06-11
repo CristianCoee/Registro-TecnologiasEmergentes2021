@@ -25,7 +25,7 @@
                             <th scope="col">Telefono</th>
                             <th scope="col">Celular</th>
                             <th scope="col">usuario</th>
-                            <th scope="col">clave</th>
+                            <th scope="col">grado</th>
                             <th scope="col">estado</th>
                             <th scope="col">acciones</th>
                             
@@ -43,7 +43,7 @@
                             <td>{{ $profesores->tel }}</td>
                             <td>{{ $profesores->cel }}</td>
                             <td>{{ $profesores->usuario }}</td>
-                            <td>{{ $profesores->clave }}</td>
+                            <td>{{ $profesores->curso }}</td>
                             <td>{{ $profesores->activo }}</td>
                             
                             <td class="d-flex">

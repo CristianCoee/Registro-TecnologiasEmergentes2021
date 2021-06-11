@@ -46,6 +46,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col">
+                                        <label class="col-form-label col-form-label-sm" for="curso">grado</label>
+                                        <input type="text" name="curso" value="{{ $profesores->curso }}" class="form-control form-control-sm col-sm-10" id="curso" placeholder="curso">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col">
                                         <label class="col-form-label col-form-label-sm" for="activo">activo</label>
                                         <input type="text" name="activo" value="{{ $profesores->activo }}" class="form-control form-control-sm col-sm-10" id="activo" placeholder="activo">
                                     </div>

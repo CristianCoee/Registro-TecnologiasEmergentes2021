@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\periodo;
+use App\Models\grados;
 
-class periodoController extends Controller
+class gradosController extends Controller
 
     {
         public function __construct(){
@@ -19,10 +19,10 @@ class periodoController extends Controller
         public function index()
         {
             //
-            $data['periodo']=Periodo::paginate(15);
-            return view('periodo.index', $data);
-            /*$periodo = Periodo::all();
-            return view('periodo.index', $periodo);*/
+            $data['grados']=Grados::paginate(15);
+            return view('grados.index', $data);
+            /*$grados = Grados::all();
+            return view('grados.index', $grados);*/
     
         }
     
@@ -34,7 +34,7 @@ class periodoController extends Controller
         public function create()
         {
             //
-            return view('periodo.create');
+            return view('grados.create');
         }
     
         /**
@@ -45,28 +45,23 @@ class periodoController extends Controller
          */
         public function store(Request $request)
         {
-            /*
+            //
 
-            $validatedData = $request->validate([
-                'periodo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'dias' => 'required|numeric',
-                'año' => 'required|numeric',
-                'estado' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-            ]);*/
+            
         
-            $dataperiodo = $request->except('_token','saveitem');
-            Periodo::insert($dataperiodo);
-            //return response()->json($dataperiodo);
-            return redirect('periodo/');
+            $datagrados = $request->except('_token','saveitem');
+            Grados::insert($datagrados);
+            //return response()->json($datagrados);
+            return redirect('grados/');
         }
     
         /**
          * Display the specified resource.
          *
-         * @param  \App\Perido  $periodo
+         * @param  \App\Grados  $grados
          * @return \Illuminate\Http\Response
          */
-        public function show(Periodo $perido)
+        public function show(Grados $grados)
         {
             //
         }
@@ -74,17 +69,17 @@ class periodoController extends Controller
         /**
          * Show the form for editing the specified resource.
          *
-         * @param  \App\Periodo  $alumnos
+         * @param  \App\Grados  $grados
          * @return \Illuminate\Http\Response
          */
-        /*public function edit(Periodo $periodo)
+        /*public function edit(Grados $grados)
         {
             //
-            return view('periodo.edit');
+            return view('grados.edit');
         }*/
         public function edit($id) {
-            $periodo = Periodo::findOrFail($id);
-            return view('periodo.edit', compact('periodo'));
+            $grados = grados::findOrFail($id);
+            return view('grados.edit', compact('grados'));
          }
     
     
@@ -92,14 +87,14 @@ class periodoController extends Controller
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request  $request
-         * @param  \App\Periodo  $periodo
+         * @param  \App\Grados  $grados
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id){
     
-            $periodo = Periodo::findOrFail($id);
-            $periodo->update($request->all());
-            return redirect('periodo');
+            $grados = Grados::findOrFail($id);
+            $grados->update($request->all());
+            return redirect('grados');
         }
         /*public function update(Request $request, Alumnos $alumnos)
         {
@@ -109,13 +104,13 @@ class periodoController extends Controller
         /**
          * Remove the specified resource from storage.
          *
-         * @param  \App\Periodo $periodo
+         * @param  \App\Grados $grados
          * @return \Illuminate\Http\Response
          */
         public function destroy($id)
         {
             //
-            Periodo::destroy($id);
-            return redirect('periodo');
+            Grados::destroy($id);
+            return redirect('grados');
         }
     }

@@ -242,6 +242,11 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Grados',
+            'url'  => '/grados',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'Profesores',
             'url'  => '/profesores',
             'icon' => 'fas fa-fw fa-user',
@@ -250,6 +255,12 @@ return [
         [
             'text' => 'Periodos',
             'url'  => '/periodo',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
+        [
+            'text' => 'calificaciones',
+            'url'  => '/calificaciones',
             'icon' => 'fas fa-fw fa-user',
         ],
         

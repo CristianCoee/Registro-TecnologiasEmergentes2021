@@ -10,5 +10,5 @@ class profesores extends Eloquent
    // use HasFactory;
    protected $connection = 'mongodb';
     protected $collection = 'profesores';
-    protected $fillable = ["nombre", "apellido", "sexo", "tel", "cel", "usuario", "clave", "activo"];
+    protected $fillable = ["nombre", "apellido", "sexo", "tel", "cel", "usuario", "clave", "curso", "activo"];
 }

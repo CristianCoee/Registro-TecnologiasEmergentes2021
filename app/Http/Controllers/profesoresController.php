@@ -45,9 +45,9 @@ class profesoresController extends Controller
          */
         public function store(Request $request)
         {
-            //
+            /*
 
-            $validatedData = $request->validate([
+         $validatedData = $request->validate([
                 
                 'nombre' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
                 'apellido' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
@@ -58,7 +58,7 @@ class profesoresController extends Controller
                 'clave' => 'required',
                 'activo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
                 
-            ]);
+            ]);*/
 
 
             $dataprofesores = $request->except('_token','saveitem');

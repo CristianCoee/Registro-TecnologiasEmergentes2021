@@ -19,7 +19,56 @@
 
                     {{ __('¡Has iniciado sesión!') }}
   </div>
-</div>
+  <br> <br>
+
+  <div class="container">
+  <div class="row">
+  
+  <div class="col-sm-6">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title">ALUMNOS</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-white bg-warning mb-3">
+      <div class="card-body">
+        <h5 class="card-title">PROFESORES</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-white bg-secondary mb-3">
+      <div class="card-body">
+        <h5 class="card-title">CURSOS</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-white bg-success mb-3">
+      <div class="card-body">
+        <h5 class="card-title">GRADOS</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+      </div>
+    </div>
+
+  </div>
 
 
 @stop

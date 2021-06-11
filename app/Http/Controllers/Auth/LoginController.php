@@ -37,4 +37,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function store(Request $request){
+        $user->password = bcrypt($request->password);
+    }
 }

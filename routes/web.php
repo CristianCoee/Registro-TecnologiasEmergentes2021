@@ -8,6 +8,9 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\periodoController;
 use App\Http\Controllers\profesoresController;
 use App\Http\Controllers\materiasController;
+use App\Http\Controllers\gradosController;
+use App\Http\Controllers\notasController;
+use App\Http\Controllers\calificacionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,10 @@ Route::get('/profesores', 'profesoresController@index');
 Route::resource('profesores', 'profesoresController');
 Route::get('/materias', 'materiasController@index');
 Route::resource('materias', 'materiasController');
+Route::get('/grados', 'gradosController@index');
+Route::resource('grados', 'gradosController');
+Route::get('/notas', 'notasController@index');
+Route::resource('notas', 'notasController');
+Route::get('/calificaciones', 'calificacionesController@index');
+Route::resource('calificaciones', 'calificacionesController');
+

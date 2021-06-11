@@ -44,6 +44,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col">
+                                        <label class="col-form-label col-form-label-sm" for="curso">grado</label>
+                                        <input type="text" name="curso"  class="form-control form-control-sm col-sm-10" id="curso" placeholder="curso">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col">
                                         <label class="col-form-label col-form-label-sm" for="tel">activo</label>
                                         <input type="text" name="activo"  class="form-control form-control-sm col-sm-4" id="activo" placeholder="activo">
                                     </div>

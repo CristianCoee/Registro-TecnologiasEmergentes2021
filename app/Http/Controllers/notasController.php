@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\periodo;
+use App\Models\notas;
 
-class periodoController extends Controller
+class notasController extends Controller
 
     {
         public function __construct(){
@@ -19,10 +19,10 @@ class periodoController extends Controller
         public function index()
         {
             //
-            $data['periodo']=Periodo::paginate(15);
-            return view('periodo.index', $data);
-            /*$periodo = Periodo::all();
-            return view('periodo.index', $periodo);*/
+            $data['notas']=notas::paginate(15);
+            return view('notas.index', $data);
+            /*$notas = notas::all();
+            return view('notas.index', $notas);*/
     
         }
     
@@ -34,7 +34,7 @@ class periodoController extends Controller
         public function create()
         {
             //
-            return view('periodo.create');
+            return view('notas.create');
         }
     
         /**
@@ -45,28 +45,24 @@ class periodoController extends Controller
          */
         public function store(Request $request)
         {
-            /*
+            //
 
-            $validatedData = $request->validate([
-                'periodo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'dias' => 'required|numeric',
-                'año' => 'required|numeric',
-                'estado' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-            ]);*/
-        
-            $dataperiodo = $request->except('_token','saveitem');
-            Periodo::insert($dataperiodo);
-            //return response()->json($dataperiodo);
-            return redirect('periodo/');
+       
+
+
+            $datanotas = $request->except('_token','saveitem');
+            notas::insert($datanotas);
+            //return response()->json($datanotas);
+            return redirect('notas/');
         }
     
         /**
          * Display the specified resource.
          *
-         * @param  \App\Perido  $periodo
+         * @param  \App\notas  $notas
          * @return \Illuminate\Http\Response
          */
-        public function show(Periodo $perido)
+        public function show(notas $notas)
         {
             //
         }
@@ -74,17 +70,17 @@ class periodoController extends Controller
         /**
          * Show the form for editing the specified resource.
          *
-         * @param  \App\Periodo  $alumnos
+         * @param  \App\notas  $notas
          * @return \Illuminate\Http\Response
          */
-        /*public function edit(Periodo $periodo)
+        /*public function edit(notas $notas)
         {
             //
-            return view('periodo.edit');
+            return view('notas.edit');
         }*/
         public function edit($id) {
-            $periodo = Periodo::findOrFail($id);
-            return view('periodo.edit', compact('periodo'));
+            $notas = notas::findOrFail($id);
+            return view('notas.edit', compact('notas'));
          }
     
     
@@ -92,16 +88,16 @@ class periodoController extends Controller
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request  $request
-         * @param  \App\Periodo  $periodo
+         * @param  \App\notas  $notas
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id){
     
-            $periodo = Periodo::findOrFail($id);
-            $periodo->update($request->all());
-            return redirect('periodo');
+            $notas = notas::findOrFail($id);
+            $notas->update($request->all());
+            return redirect('notas');
         }
-        /*public function update(Request $request, Alumnos $alumnos)
+        /*public function update(Request $request, notas $notas)
         {
             //
         }*/
@@ -109,13 +105,13 @@ class periodoController extends Controller
         /**
          * Remove the specified resource from storage.
          *
-         * @param  \App\Periodo $periodo
+         * @param  \App\notas $notas
          * @return \Illuminate\Http\Response
          */
         public function destroy($id)
         {
             //
-            Periodo::destroy($id);
-            return redirect('periodo');
+            notas::destroy($id);
+            return redirect('notas');
         }
     }

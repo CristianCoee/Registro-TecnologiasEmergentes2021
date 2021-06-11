@@ -8,7 +8,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col">
-                                        <label class="col-form-label col-form-label-sm" for="estado">materias</label>
+                                        <label class="col-form-label col-form-label-sm" for="materias">materias</label>
                                         <input type="text" name="materias" value="{{ $materias->materias }}" class="form-control form-control-sm col-sm-10" id="materias" placeholder="materias">
                                     </div>
                                 </div>
