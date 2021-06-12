@@ -59,15 +59,16 @@
                                 </div>
                                 
                 
-                            <div class="row">
-                                    <div class="form-group col">
-                                        <label class="col-form-label col-form-label-sm" for="curso">Curso</label>
-                                        <select class="form-control" name="category" id="category" >
-                                        <option value=""> Select </option>
-                                       
-                                    </div>
+                                <div class="row">
+                                <div class="form-group col">
+                                    <label class="col-form-label col-form-label-sm" for="curso">Grado</label>
+                                    <select class="form-control" name="category" id="category" required>
+                                    @foreach($grados as $grados)
+                                        <option value="{{ $grados->grados }}"> {{$grados->grados}} </option>
+                                    @endforeach
                                 </div>
-
+                            </div>
+<br/><br/><br/>
                                 <div class="row">
                                     <div class="form-group col">
                                         <label class="col-form-label col-form-label-sm" for="estado">Estado</label>

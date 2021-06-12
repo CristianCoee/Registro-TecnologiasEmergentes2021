@@ -16,14 +16,13 @@ class CreateCalificacionesTable extends Migration
         Schema::create('calificaciones', function (Blueprint $table) {
             $table->id();
             $table->alumno();
-            $table->materia();
-            $table->sesion();
+            $table->grado();
             $table->profesor();
             $table->periodo();
-            $table->actividad1();
-            $table->actividad2();
-            $table->examen();
-            $table->promedio();
+            $table->matematicas();
+            $table->lenguaje();
+            $table->sociales();
+            $table->ciencia();
             $table->timestamps();
         });
     }
