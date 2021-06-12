@@ -57,25 +57,19 @@ class AlumnoController extends Controller
          */
         public function store(Request $request)
         {
-            //
-
-        /*    $validatedData = $request->validate([
-                'NIE' => 'required',
-                'nombrealum' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'apellidoalum' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            $this->validate($request,[
+                'NIE' =>  'numeric|required|unique',
+                'nombrealum' => 'required|regex:/^[\pL\s\-]+$/u',
+                'apellidoalum' => 'required|regex:/^[\pL\s\-]+$/u',
                 'telefonoalum' => 'required|numeric',
-                'sexo' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-
-                'direccion' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'responsable' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'curso' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-                'estado' => 'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-            ]);*/
-
+                'direccion' => 'required|regex:/^[\pL\s\-]+$/u',
+                'responsable' => 'required|regex:/^[\pL\s\-]+$/u',
+            ]);
 
             $dataalumnos = $request->except('_token','saveitem');
             Alumnos::insert($dataalumnos);
             //return response()->json($dataProducts);
+            //Toastr::success('Alumno agregado','Success');
             return redirect('alumnos/');
         }
 
